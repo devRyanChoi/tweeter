@@ -5,6 +5,11 @@ section {
 
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 textarea {
@@ -15,6 +20,12 @@ textarea {
   justify-content: center;
 }
 
+div.buttoncounter {
+  display: flex;
+  border-top: 5px;
+  justify-content: space-between;
+}
+
 button {
   background-color: #4056A1;
   color: whitesmoke;
@@ -22,7 +33,12 @@ button {
 }
 
 .counter {
-  display: flex;
   font-family: 'Bungee', sans-serif;
+  display: flex;
   
+  
+}
+.counter-negative {
+  font-family: 'Bungee', cursive, sans-serif;
+  color: red;
 }
