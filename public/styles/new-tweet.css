@@ -1,0 +1,28 @@
+section {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+textarea {
+  display: flex;
+  border: none;
+  border-bottom: solid;
+  background-color: #f4f1ec;
+  justify-content: center;
+}
+
+button {
+  background-color: #4056A1;
+  color: whitesmoke;
+
+}
+
+.counter {
+  display: flex;
+  font-family: 'Bungee', sans-serif;
+  
+}
