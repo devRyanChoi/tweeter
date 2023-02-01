@@ -56,15 +56,17 @@
   </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">  
+    <main class="container">
       <section class="new-tweet">
-          <p class='error'></p>
-          <form id="form" action="/tweets/" method="POST">
-            <label for="tweet-text">What are you humming about?</label>
-            <textarea id="textBar" name="text"></textarea>
-            <input type="submit" value="Tweet">
-            <span class="counter">140</span>
-          </form>
+        <div id="error-container" class="error-message"></div>
+        <h3>Compose Tweet</h3>
+        <form method="POST" action="/tweets/">
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <div class="buttoncounter">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
       </section>
               
       <section id="tweets-container"></section>

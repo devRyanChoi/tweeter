@@ -1,36 +1,70 @@
 
 /* Compose Box */
+section {
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 80px;
+  margin-top: 0;
+  margin-bottom: 50px;
+  justify-content: center;
+}
+
 form {
   display: flex;
-  flex-wrap: wrap;
+  padding: 0%;
+  flex-direction: column;
+}
+
+textarea {
+  display: flex;
+  font-size: 20px;
+  font-weight: 550;
+  outline: none;
+  resize: none;
+  border: none;
+  border-bottom: solid;
+  background-color: #f4f1ec;
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
+  height: 40px;;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.new-text {
+  margin-top: 30px;
+}
+
+.tweet-text {
+  display: flex;
+  align-items: flex-start;
+}
+
+div.profileimage {
+  display: flex;
+  border-top: 5px;
   justify-content: space-between;
 }
 
-form textarea  {
+div.buttoncounter {
   display: flex;
-  background-color: #f4f1ec;
-  outline: none;
-  border: none;
-  border-bottom: solid;
-  justify-content: center;
-  margin: auto;
-  margin-bottom: 12px;
-  font-weight: bold;
-  width: 100%;
-  height: 50px;;
-  resize: none;
+  border-top: 5px;
+  justify-content: space-between;
 }
 
-
-section form input {
-  color: #f4f1ec; 
+button {
   background-color: #4056A1;
-  font-family: 'Bungee', cursive;   
-  outline: none;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif
 }
 
-section form span {
-  font-weight: bold;
-  font-family: 'Bungee', cursive;
+.counter {
+  display: flex;
+  font-family: 'Bungee', sans-serif;
 }
 
+.counter-negative {
+  color: red;
+}
