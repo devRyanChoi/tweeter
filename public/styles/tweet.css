@@ -1,0 +1,83 @@
+article {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 0.6em;
+  justify-content: space-between;
+  border: solid;
+  font-weight: 600;
+  background-color: #e4e4cc;
+  margin-bottom: 18px;
+}
+
+div.tweetpost {
+  height: 80px;   
+  margin-bottom: 30px;
+  display: flex;
+  border-top: 5px;
+  justify-content: space-between;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  margin: 0%;
+  justify-content: space-between;
+  padding: 0%;
+  align-items: center;
+}
+
+h4 {
+  margin-left: 15px;
+}
+
+h5 {
+  justify-content: flex-end;
+}
+
+div.postedtweet {
+  border-bottom: solid;
+}
+
+p.time {
+  margin-top: 10px;
+  font-size: medium;
+}
+
+div.icons {
+  margin: 10px;
+}
+
+div.timeicon {
+  display: flex;
+  justify-content: space-between;
+}
+
+i {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
+}
+
+i.fa-solid.fa-flag {
+  margin-right: 10px;
+}
+
+i.fa-solid.fa-retweet {
+  margin-right: 10px;
+}
+
+article:hover {
+  box-shadow: 0 10px 10px 0 #000000;
+}
+
+i.fa-solid.fa-flag:hover {
+  color: #4056A1;
+}
+
+i.fa-solid.fa-retweet:hover {
+  color: #4056A1;
+}
+
+i.fa-solid.fa-heart:hover {
+  color: red;
+}
