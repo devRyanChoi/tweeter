@@ -15,7 +15,7 @@ html {
  */
 
 body {
-  /* color: #545149; */
+  color: #545149;
   background-color: #F5F5F6;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
@@ -23,15 +23,17 @@ body {
   justify-content: center;
 }
 
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  
  */
-
  main.container {
   
   width: 90%;
   display: flex;
   align-items: center;
   flex-direction: column; 
+  justify-content: space-around;
 }

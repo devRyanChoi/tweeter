@@ -1,44 +1,32 @@
-section {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
-}
-
+/* Compose Box */
 form {
   display: flex;
-  flex-direction: column;
-}
-
-
-
-textarea {
-  display: flex;
-  border: none;
-  border-bottom: solid;
-  background-color: #f4f1ec;
-  justify-content: center;
-}
-
-div.buttoncounter {
-  display: flex;
-  border-top: 5px;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
-button {
+
+form textarea {
+  color: #545149;
+  background-color: #f4f1ec;
+  flex: 100%;
+  font-weight: bold;
+  margin-bottom: 12px;
+  height: 50px;
+  border: none;
+  border-bottom: 4px solid #545149; 
+  outline: none;
+}
+
+section form input {
+  color: #f4f1ec; 
   background-color: #4056A1;
-  color: whitesmoke;
-
+  font-family: 'Bungee', cursive;   
+  outline: none;
 }
 
-.counter {
-  font-family: 'Bungee', sans-serif;
-  display: flex;
-  
-  
-}
-.counter-negative {
-  font-family: 'Bungee', cursive, sans-serif;
-  color: red;
+section form span {
+  font-weight: bold;
+  font-family: 'Bungee', cursive;
 }
