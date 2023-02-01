@@ -4,6 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $( document ).ready(function() {
+
+  $( "form" ).on( "submit", function( event ) {
+    event.preventDefault();
+    console.log( $( this ).serialize() );
+  });
+
+  
   const data = [
     {
       "user": {
