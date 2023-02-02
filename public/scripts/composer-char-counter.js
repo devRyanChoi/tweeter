@@ -1,16 +1,22 @@
 $(document).ready(function() {
-  
-  $("#textBar").on('input', function() {
-    const maxCount = 140;
-    let inputLength = $(this).val().length;
-    $(this).nextAll('.counter').text(maxCount - inputLength);
-    if (inputLength > 140) {
-      $(this).nextAll('.counter').css("color", "red");
+    const maxChar = 140; 
+  $('#tweet-text').on('input', function() {
+    const countChar = $(this).val().length; 
+    const tweetdiv = $(this).next();   
+    const counter = tweetdiv.find('output')  
+    const restChar = maxChar - countChar;
+    $(counter).text(restChar);
+    if(restChar < 0) {
+      $(counter).addClass('counter-negative');
     } else {
-      $(this).nextAll('.counter').css("color", "#545149");
+      $(counter).removeClass('counter-negative')
     }
-  });
+  })
 });
+
+
+
+
 
 
 

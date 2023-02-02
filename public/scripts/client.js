@@ -8,23 +8,15 @@ $( document ).ready(function() {
 
   $('form').on('submit',function(event) {
     event.preventDefault();
-  });  
+    
   const tweetText = $(this).serialize();
+  });
   
-  const renderTweets = function(tweets) {
-    const $container = $('#tweets-container')
-
-    tweets.forEach(tweet => {
-        const $tweet = createTweetElement(tweet);
-        $container.prepend($tweet);
-    });
-  };
   function loadTweets() {
-
     $.get("/tweets")
-      .then(data => {
-        renderTweets(data)
-      })
+    .then(data => {
+    renderTweets(data)
+    })
     $.ajax('/tweets', { method: 'GET' })
     .then(function (moreTweets) {
       renderTweets(moreTweets);
@@ -33,11 +25,27 @@ $( document ).ready(function() {
       console.log(err);
     });
   }
+    loadTweets();
 
-  loadTweets();
+  const renderTweets = function(tweets) {
+    
+    tweets.forEach(tweet => {
+      const $tweet = createTweetElement(tweet);
+      $container.prepend($tweet);
+    });
+    const $container = $('#tweets-container') 
+    
+  };
+
 
   const createTweetElement = function (data) {
-  const $tweet = `
+
+    const escape = function (str) {
+        let div = document.createElement("div");
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+      };
+    const $tweet = `
     <article>
         <div class="tweetpost">
           <ul>
@@ -46,26 +54,20 @@ $( document ).ready(function() {
           </ul> 
           <h5>${data.user.handle}</h5>
         </div>
-        <div class="postedtweet">
-        <p class="tweet-text">${escape(data.content.text)}</p>
-        </div>
-        <div class="timeicon">
-        <p class="time">${timeago.format(data.created_at)}</p>
-          <div class="icons">
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i> 
-          <i class="fa-solid fa-heart"></i>
-          </div>
-        </div>  
-    </article> `
         
-  const escape = function (str) {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
+          <div class="postedtweet">
+          <p class="tweet-text">${escape(data.content.text)}</p>
+          </div>
+          <div class="timeicon">
+          <p class="time">${timeago.format(data.created_at)}</p>
+            <div class="icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i> 
+            <i class="fa-solid fa-heart"></i>
+            </div>
+          </div>  
+      </article> `
 
-    return $tweet;
-  }
+      return $tweet;
 
 });
