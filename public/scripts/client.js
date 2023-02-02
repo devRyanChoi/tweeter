@@ -14,14 +14,14 @@ $( document ).ready(function() {
 
   if (newTweetText.length > 140) {
       $('#error-container')
-        .text(`The characters limit exceeded`)
+        .text(`The characters limit exceeded!`)
         .slideDown('slow')
         .addClass('unhide');
     }
 
     if (newTweetText.length === 0) {
       $('#error-container')
-        .text(`Share your idea`)
+        .text(`Share your idea!`)
         .slideDown('slow')
         .addClass('unhide');
     }
