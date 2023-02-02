@@ -19,7 +19,22 @@ $( document ).ready(function() {
         $container.prepend($tweet);
     });
   };
+  function loadTweets() {
 
+    $.get("/tweets")
+      .then(data => {
+        renderTweets(data)
+      })
+    $.ajax('/tweets', { method: 'GET' })
+    .then(function (moreTweets) {
+      renderTweets(moreTweets);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
+  loadTweets();
 
   const createTweetElement = function (data) {
   const $tweet = `
