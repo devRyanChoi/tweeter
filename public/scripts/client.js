@@ -11,6 +11,13 @@ $( document ).ready(function() {
 
   const newTweetText = $('#tweet-text').val();
   const tweetText = $(this).serialize();
+  
+  if (newTweetText.length > 140) {
+    $('#error-container')
+      .text(`❗️Characters limit exceeded❗️`)
+      .slideDown('slow')
+      .addClass('unhide');
+  }
 
   if (newTweetText.length > 0 && newTweetText.length <= 140) {
     $.post("/tweets", tweetText)
