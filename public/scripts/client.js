@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 $( document ).ready(function() {
   console.log( "ready!" );
 
@@ -10,47 +11,48 @@ $( document ).ready(function() {
   event.preventDefault();
 
   const newTweetText = $('#tweet-text').val();
-  const tweetText = $(this).serialize();
-  
+
   if (newTweetText.length > 140) {
-    $('#error-container')
-      .text(`❗️Characters limit exceeded❗️`)
-      .slideDown('slow')
-      .addClass('unhide');
-  }
-
-  if (newTweetText.length > 0 && newTweetText.length <= 140) {
-    $.post("/tweets", tweetText)
-    .done(function() {
-    // Reset form and counter on successful post
-    $('#tweet-text').val('');
-    $('.counter').val(140);
-
-    // Clear any error messages
-    $('#error-container')
-      .removeClass('unhide')
-      .slideUp('slow');
-
-    // Refresh the tweet container
-    $('#tweets-container').empty();
-      loadTweets();
-      });
+      $('#error-container')
+        .text(`The characters limit exceeded`)
+        .slideDown('slow')
+        .addClass('unhide');
     }
+
+    if (newTweetText.length === 0) {
+      $('#error-container')
+        .text(`Share your idea`)
+        .slideDown('slow')
+        .addClass('unhide');
+    }
+
+    const tweetText = $(this).serialize();
+
+    if (newTweetText.length > 0 && newTweetText.length <= 140) {
+      $.post("/tweets", tweetText)
+        .done(function() {
+          // Reset form and counter on successful post
+          $('#tweet-text').val('');
+          $('.counter').val(140);
+
+          // Clear any error messages
+          $('#error-container')
+            .removeClass('unhide')
+            .slideUp('slow');
+
+          // Refresh the tweet container
+          $('#tweets-container').empty();
+          loadTweets();
+        });
+      }
     });
 
   function loadTweets() {
 
     $.get("/tweets")
-    .then(data => {
-    renderTweets(data)
-    })
-    $.ajax('/tweets', { method: 'GET' })
-    .then(function (moreTweets) {
-      renderTweets(moreTweets);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .then(data => {
+        renderTweets(data)
+      })
   }
   
     loadTweets();
@@ -59,8 +61,8 @@ const renderTweets = function(tweets) {
   const $container = $('#tweets-container')
 
   tweets.forEach(tweet => {
-      const $tweet = createTweetElement(tweet);
-      $container.prepend($tweet);
+    const $tweet = createTweetElement(tweet);
+    $container.prepend($tweet);
   });
 };
 
@@ -74,28 +76,28 @@ const createTweetElement = function (data) {
     };
   const $tweet = `
   <article>
-      <div class="tweetpost">
+    <div class="tweetpost">
         <ul>
-         <img src="${data.user.avatars}">
-         <h4>${data.user.name}</h4>
+          <img src="${data.user.avatars}">
+          <h4>${data.user.name}</h4>
         </ul> 
-        <h5>${data.user.handle}</h5>
-      </div>
-      
+          <h5>${data.user.handle}</h5>
+        </div>
         <div class="postedtweet">
-        <p class="tweet-text">${escape(data.content.text)}</p>
+          <p class="tweet-text">${escape(data.content.text)}</p>
         </div>
         <div class="timeicon">
-        <p class="time">${timeago.format(data.created_at)}</p>
-          <div class="icons">
+          <p class="time">${timeago.format(data.created_at)}</p>
+        <div class="icons">
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i> 
           <i class="fa-solid fa-heart"></i>
-          </div>
-        </div>  
-    </article> `
+        </div>
+      </div>  
+  </article> `
+      
 
     return $tweet;
-  }
+}
 
 });

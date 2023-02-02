@@ -1,10 +1,11 @@
 article {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  
   height: auto;
   padding: 0.6em;
-  justify-content: space-between;
-  border: solid;
+  border: 1px solid black;
   font-weight: 600;
   background-color: #e4e4cc;
   margin-bottom: 18px;

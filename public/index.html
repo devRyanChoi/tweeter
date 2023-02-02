@@ -5,7 +5,6 @@
     <meta content-type="application/x-www-form-urlencoded">
     <title>Tweeter - Home Page</title>
     
-    
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
@@ -15,7 +14,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css">
     <link rel="stylesheet" href="/styles/header.css" type="text/css">
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
-    <link rel="stylesheet" href="/styles/tweets.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css"/>
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +31,10 @@
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
-  </head>
-
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span>Tweeter</span>
     </nav>
     
     <!-- main - header content here -->
@@ -57,15 +54,15 @@
         <div id="error-container" class="error-message"></div>
         <h3>Compose Tweet</h3>
         <form method="POST" action="/tweets/">
-          <textarea name="text" id="tweet-text" placeholder="What's happening?"></textarea>
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="buttoncounter">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
-      <section id = "tweets-container">
-      <!-- Dynamic tweet goes here -->
+      <section id="tweets-container">
+      <!-- Dynamic tweet -->
     </section>
     </main>
   </div>

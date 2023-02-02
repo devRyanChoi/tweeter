@@ -69,3 +69,14 @@ button {
 .counter-negative {
   color: red;
 }
+
+.error-message {
+  display: none;
+  color: #000;
+  font-weight: 600;
+  border: 3px solid red;
+  padding: 15px;
+  margin-top: 15px;
+  text-align: center;
+  background:none;
+}
