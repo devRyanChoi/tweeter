@@ -12,39 +12,39 @@ $( document ).ready(function() {
   const newTweetText = $('#tweet-text').val();
   const tweetText = $(this).serialize();
 
-    if (newTweetText.length > 0 && newTweetText.length <= 140) {
-      $.post("/tweets", tweetText)
-        .done(function() {
-          // Reset form and counter on successful post
-          $('#tweet-text').val('');
-          $('.counter').val(140);
+  if (newTweetText.length > 0 && newTweetText.length <= 140) {
+    $.post("/tweets", tweetText)
+    .done(function() {
+    // Reset form and counter on successful post
+    $('#tweet-text').val('');
+    $('.counter').val(140);
 
-          // Clear any error messages
-          $('#error-container')
-            .removeClass('unhide')
-            .slideUp('slow');
+    // Clear any error messages
+    $('#error-container')
+      .removeClass('unhide')
+      .slideUp('slow');
 
-          // Refresh the tweet container
-          $('#tweets-container').empty();
-          loadTweets();
-        });
-      }
-    });
-
-    function loadTweets() {
-
-      $.get("/tweets")
-        .then(data => {
-          renderTweets(data)
-        })
-      $.ajax('/tweets', { method: 'GET' })
-      .then(function (moreTweets) {
-        renderTweets(moreTweets);
-      })
-      .catch((err) => {
-        console.log(err);
+    // Refresh the tweet container
+    $('#tweets-container').empty();
+      loadTweets();
       });
     }
+    });
+
+  function loadTweets() {
+
+    $.get("/tweets")
+    .then(data => {
+    renderTweets(data)
+    })
+    $.ajax('/tweets', { method: 'GET' })
+    .then(function (moreTweets) {
+      renderTweets(moreTweets);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
   
     loadTweets();
 
@@ -89,6 +89,6 @@ const createTweetElement = function (data) {
     </article> `
 
     return $tweet;
-}
+  }
 
 });

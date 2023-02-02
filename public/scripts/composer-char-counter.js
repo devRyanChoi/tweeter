@@ -4,9 +4,8 @@ $(document).ready(function() {
     const countChar = $(this).val().length; 
     const tweetdiv = $(this).next();   
     const counter = tweetdiv.find('output')  
-    const restChar = maxChar - countChar;
-    $(counter).text(restChar);
-    if(restChar < 0) {
+    $(counter).text(maxChar - countChar);
+    if(maxChar - countChar < 0) {
       $(counter).addClass('counter-negative');
     } else {
       $(counter).removeClass('counter-negative')
