@@ -4,11 +4,11 @@ body {
 }
 
 nav {
+  height: 120px;
   position: fixed;
   top: 0;
   width: 100%;
   display: flex;
-  height: 120px;
   color: #FFFFFF;
   background-color: #4056A1;
   font-family: "Source Sans Pro";
@@ -17,12 +17,7 @@ nav {
   justify-content: space-between; 
 }
 
-span {
-  margin: 1.5em;
-  font-family: 'Times New Roman', Times, serif;
-}
-
- ul.nav.menu {
+ul.nav.menu {
   display: flex;
   margin-right: 60px;
   flex-direction: column;
@@ -32,3 +27,16 @@ span {
 }
 
 
+.fa {
+  color:#FF0000;
+}
+
+p {
+  margin-block-start: 0px;
+  margin-block-end: 10px;
+}
+
+span {
+  margin: 1.5em;
+  font-family: 'Bungee', cursive, sans-serif;
+}

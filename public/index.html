@@ -8,9 +8,7 @@
     <!-- External CSS -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      type="text/css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -22,10 +20,7 @@
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -33,6 +28,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet">
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -55,43 +53,48 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>Tweeter</span>
-    </nav>
+      <ul class="nav menu">
+        <p>Write a new tweet</p>
+        <i class="fa fa-angle-double-down" ></i>
+      </ul>
+  </nav>
 
-    <div class='main-wrapper'> 
-      <!-- main - header content here -->
-      <header class="main-header">
-        <div class="profileimage">
-          <img class="userimage" src="/images/profile-hex.png" />
-        </div>
-        <br />
-        <div class="name">
-          <h2>Mingun Choi</h2>
-        </div>
-      </header>
+  <div class="main-wrapper">
+    <!-- main - header content here -->
+    <header class="main-header">
+      <div class="profileimage">
+        <img class="userimage" src="/images/profile-hex.png" />
+      </div>
+      <br />
+      <div class="name">
+        <h2>Mingun Choi</h2>
+      </div>
+    </header>
 
-      <!-- Page-specific (main) content here -->
-      <main class="container">
-        <section class="new-tweet">
-          <div id="error-container" class="error-message"></div>
-          <h3>Compose Tweet</h3>
-          <form method="POST" action="/tweets/">
-            <textarea
-              name="text"
-              id="tweet-text"
-              placeholder="What are you humming about?"
-            ></textarea>
-            <div class="buttoncounter">
-              <button type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text"
-                >140</output
-              >
-            </div>
-          </form>
-        </section>
-        <section id="tweets-container">
-          <!-- Dynamic tweet -->
-        </section>
-      </main>
-    </div>
-  </body>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <div id="error-container" class="error-message"></div>
+        <h3>Compose Tweet</h3>
+        <form method="POST" action="/tweets/">
+          <textarea
+            name="text"
+            id="tweet-text"
+            placeholder="What are you humming about?"
+          ></textarea>
+          <div class="buttoncounter">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text"
+              >140</output
+            >
+          </div>
+        </form>
+      </section>
+      <section id="tweets-container">
+        <!-- Dynamic tweet -->
+      </section>
+    </main>
+  </div>
+</body>
 </html>
+    
